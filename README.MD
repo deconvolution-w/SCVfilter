@@ -17,12 +17,10 @@ pip install -r requirements.txt
 
 ## Prepare data
 
-### Download
-
 * The dataset-II has been provided in this repository.
 * Other data can load from  [GISAID Initiative (epicov.org)](https://platform.epicov.org/epi3/frontend) 
 
-### Quick Start
+## Quick Start
 
 ```shell script
 python api.py
