@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 from torch.utils.data import Dataset, DataLoader
 import torch
 
@@ -120,4 +119,4 @@ if __name__ == '__main__':
     train_data = myDataset('test', 3)
     trainloader = DataLoader(train_data, batch_size=64, shuffle=True)
     for x, y in trainloader:
-        # print(x, y)
+        print(x, y)
