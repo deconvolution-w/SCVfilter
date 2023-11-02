@@ -11,45 +11,9 @@ class myDataset(Dataset):
         self.X = []
         self.Y = []
         #########################################################################
-        if nclass == 3:
-            main_land = open('./data/3-class/mainland_sequences.fasta', 'r+')
-            taiwan_land = open('./data/3-class/taiwan_sequences.fasta', 'r+')
-            hongkong_land = open('./data/3-class/hongkong_sequences.fasta', 'r+')
-            self.get_data(main_land, 0, self.train) #1792
-            self.get_data(taiwan_land, 1, self.train)
-            self.get_data(hongkong_land, 2, self.train)  #340
-        #########################################################################
-        if nclass == 6:
-            africa = open('./data/6-class/africa.sequences.fasta', 'r+')
-            self.get_data(africa, 0, self.train)
-            asia = open('./data/6-class/asia.sequences.fasta', 'r+')
-            self.get_data(asia, 1, self.train)
-            europe = open('./data/6-class/europe.sequences.fasta', 'r+')
-            self.get_data(europe, 2, self.train)
-            northamerica = open('./data/6-class/northamerica.sequences.fasta', 'r+')
-            self.get_data(northamerica, 3, self.train)
-            oceania = open('./data/6-class/oceania.sequences.fasta', 'r+')
-            self.get_data(oceania, 4, self.train)
-            sorthamerica = open('./data/6-class/sorthamerica.sequences.fasta', 'r+')
-            self.get_data(sorthamerica, 5, self.train)
-        #########################################################################
-        if nclass == 8:
-            alpha = open('./data/8-class/vocalphagry.sequences.fasta', 'r+')
-            self.get_data(alpha, 0, self.train)
-            beta = open('./data/8-class/vocbetagh.sequences.fasta', 'r+')
-            self.get_data(beta, 1, self.train)
-            delte = open('./data/8-class/vocdeltegk.sequences.fasta', 'r+')
-            self.get_data(delte, 2, self.train)
-            gamma = open('./data/8-class/vocgammagr.sequences.fasta', 'r+')
-            self.get_data(gamma, 3, self.train)
-            omicron = open('./data/8-class/vocomicronGRA.sequences.fasta', 'r+')
-            self.get_data(omicron, 4, self.train)
-            lambda_ = open('./data/8-class/voilambdagr.sequences.fasta', 'r+')
-            self.get_data(lambda_, 5, self.train)
-            mu = open('./data/8-class/voimugh.sequences.fasta', 'r+')
-            self.get_data(mu, 6, self.train)
-            gh = open('./data/8-class/vumgh490R.sequences.fasta', 'r+')
-            self.get_data(gh, 7, self.train)
+        ### Read data from here
+        hongkong_land = open('./data/3-class/hongkong_sequences.fasta', 'r+')
+        self.get_data(main_land, 0, self.train) 
         #########################################################################
         self.X, self.Y = torch.Tensor(self.X), torch.Tensor(self.Y)
         print('The size of {}data is [{},{}]'.format(trainOrtest, self.X.size(0),self.X.size(1)))
